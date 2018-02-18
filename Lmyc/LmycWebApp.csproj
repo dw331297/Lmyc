@@ -198,6 +198,10 @@
     <Compile Include="Migrations\BoatMigrations\201802170013380_Update.Designer.cs">
       <DependentUpon>201802170013380_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\BoatMigrations\201802180004358_Upgrade.cs" />
+    <Compile Include="Migrations\BoatMigrations\201802180004358_Upgrade.Designer.cs">
+      <DependentUpon>201802180004358_Upgrade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\BoatMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -297,6 +301,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\BoatMigrations\201802170013380_Update.resx">
       <DependentUpon>201802170013380_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\BoatMigrations\201802180004358_Upgrade.resx">
+      <DependentUpon>201802180004358_Upgrade.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
