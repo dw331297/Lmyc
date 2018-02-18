@@ -27,6 +27,6 @@ namespace LmycDataLib.Models
         public string CreatedBy { get; set; }
 
         [ScaffoldColumn(false)]
-        public ApplicationUser User { get; set; }
+        public Users User { get; set; }
     }
 }

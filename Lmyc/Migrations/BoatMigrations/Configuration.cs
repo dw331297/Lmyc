@@ -31,7 +31,7 @@ namespace Lmyc.Migrations.BoatMigrations
             //{
             //    if(!RoleManager.RoleExists(roleName))
             //    {
-            //        roleResult = RoleManager.Create(new IdentityRole(roleName));
+            //        roleResult = RoleManager.Create(new  (roleName));
             //    }
             //}
 
@@ -44,16 +44,15 @@ namespace Lmyc.Migrations.BoatMigrations
             //    System.Diagnostics.Debugger.Launch();
             //}
 
-
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var roleManager = new RoleManager<Roles>(new RoleStore<Roles>(context));
             if (!roleManager.RoleExists("Admin"))
-                roleManager.Create(new IdentityRole("Admin"));
+                roleManager.Create(new Roles("Admin"));
             if (!roleManager.RoleExists("Member"))
-                roleManager.Create(new IdentityRole("Member"));
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+                roleManager.Create(new Roles("Member"));
+            var userManager = new UserManager<Users>(new UserStore<Users>(context));
             if (userManager.FindByEmail("a@a.a") == null)
             {
-                var user = new ApplicationUser
+                var user = new Users
                 {
                     Email = "a@a.a",
                     UserName = "a",
@@ -64,7 +63,7 @@ namespace Lmyc.Migrations.BoatMigrations
             }
             if (userManager.FindByEmail("m@m.m") == null)
             {
-                var user = new ApplicationUser
+                var user = new Users
                 {
                     Email = "m@m.m",
                     UserName = "m",

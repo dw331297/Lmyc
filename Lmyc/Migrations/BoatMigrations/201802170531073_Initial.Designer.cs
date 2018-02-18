@@ -7,13 +7,13 @@ namespace Lmyc.Migrations.BoatMigrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Update : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Update));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201802170013380_Update"; }
+            get { return "201802170531073_Initial"; }
         }
         
         string IMigrationMetadata.Source

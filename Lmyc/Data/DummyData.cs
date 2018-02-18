@@ -9,13 +9,13 @@ namespace Lmyc.Data
 {
     public class DummyData
     {
-        public static List<ApplicationUser> GetUsers()
+        public static List<Users> GetUsers()
         {
             var passwordHash = new PasswordHasher();
             string password = passwordHash.HashPassword("P@$$w0rd");
-            List<ApplicationUser> users = new List<ApplicationUser>()
+            List<Users> users = new List<Users>()
             {
-                new ApplicationUser()
+                new Users()
                 {
                     Id = "4f4b5137-2875-4eea-a63d-100af576e643",
                     UserName = "a",
@@ -23,7 +23,7 @@ namespace Lmyc.Data
                     Email = "a@a.com",
                     SecurityStamp = Guid.NewGuid().ToString()
                 },
-                new ApplicationUser()
+                new Users()
                 {
                     Id = "88b619a9-9818-4369-9000-8c1809ccc482",
                     UserName = "m",
