@@ -57,6 +57,7 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedBy)
+            @*@item.User.FirstName*@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.BoatId }) |
