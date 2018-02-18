@@ -81,19 +81,21 @@ namespace Lmyc.Migrations.BoatMigrations
             {
                 new Boat()
                 {
-                    BoatName = "Ocean Pearl",
-                    LengthInFeet = 22,
-                    Year = 1987,
-                    Make = "yacht",
+                    BoatName = "USS Enterprise",
+                    LengthInFeet = 1300,
+                    Picture = "https://vignette.wikia.nocookie.net/memoryalpha/images/d/df/USS_Enterprise-A_quarter.jpg/revision/latest?cb=20100518022537&path-prefix=en",
+                    Year = 2200,
+                    Make = "Constitution Class",
                     RecordCreationDate = new DateTime(2013, 10, 5),
                     CreatedBy = Auser.Id
                 },
                 new Boat()
                 {
-                    BoatName = "USS Saratoga",
-                    LengthInFeet = 56,
-                    Year = 1998,
-                    Make = "Scooner",
+                    BoatName = "USS Defiant",
+                    LengthInFeet = 900,
+                    Picture = "http://www.ex-astris-scientia.org/scans/other/defiant-publicity.jpg",
+                    Year = 2370,
+                    Make = "Defiant Class",
                     RecordCreationDate = new DateTime(2011, 3, 4),
                     CreatedBy = Muser.Id
                 }

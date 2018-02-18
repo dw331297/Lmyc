@@ -208,6 +208,10 @@
     <Compile Include="Migrations\BoatMigrations\201802181235194_sixth.Designer.cs">
       <DependentUpon>201802181235194_sixth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\BoatMigrations\201802180004358_Upgrade.cs" />
+    <Compile Include="Migrations\BoatMigrations\201802180004358_Upgrade.Designer.cs">
+      <DependentUpon>201802180004358_Upgrade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\BoatMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -221,6 +225,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Docs\migrations.txt" />
+    <Content Include="Docs\README.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -324,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\BoatMigrations\201802181235194_sixth.resx">
       <DependentUpon>201802181235194_sixth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\BoatMigrations\201802180004358_Upgrade.resx">
+      <DependentUpon>201802180004358_Upgrade.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

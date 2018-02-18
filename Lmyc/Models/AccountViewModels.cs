@@ -116,6 +116,10 @@ namespace Lmyc.Models
         [Phone]
         [Display(Name = "Mobile Number")]
         public string MobileNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Experience")]
+        public string Experience { get; set; }
     }
 
     public class ResetPasswordViewModel

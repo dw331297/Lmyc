@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using LmycDataLib.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Lmyc.Controllers
 {
@@ -47,10 +48,12 @@ namespace Lmyc.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BoatId,BoatName,Picture,LengthInFeet,Make,Year,RecordCreationDate")] Boat boat)
+        public ActionResult Create([Bind(Include = "BoatId,BoatName,Picture,LengthInFeet,Make,Year")] Boat boat)
         {
             if (ModelState.IsValid)
             {
+                boat.CreatedBy = User.Identity.GetUserId();
+                boat.RecordCreationDate = DateTime.Now;
                 db.Boats.Add(boat);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -79,7 +82,7 @@ namespace Lmyc.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BoatId,BoatName,Picture,LengthInFeet,Make,Year,RecordCreationDate")] Boat boat)
+        public ActionResult Edit([Bind(Include = "BoatId,BoatName,Picture,LengthInFeet,Make,Year,RecordCreationDate,CreatedBy")] Boat boat)
         {
             if (ModelState.IsValid)
             {
