@@ -50,6 +50,94 @@ namespace Lmyc.Controllers
             return View();
         }
 
+        // GET: Role/Create
+        public ActionResult AddRoleToUser(string id)
+        {
+            List<string> rnames = new List<string>();
+            List<IdentityRole> roles = db.Roles.ToList();
+
+            for(int i = 0; i < roles.Count(); i++)
+            {
+                rnames.Add(roles[i].Name);
+            }
+
+            ViewBag.roles = rnames;
+
+            AddRoleToUser viewModel = new AddRoleToUser()
+            {
+                UserID = id,
+                RoleName = null
+            };
+            return View(viewModel);
+        }
+
+        // POST: Roles/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddRoleToUser([Bind(Include = "UserId, RoleName")] AddRoleToUser viewModel)
+        {
+            var uId = viewModel.UserID;
+            var rName = viewModel.RoleName;
+            if (ModelState.IsValid)
+            {
+                var userManager = new UserManager<Users>(new UserStore<Users>(db));
+
+                userManager.AddToRole(uId, rName);
+                db.SaveChanges();
+                return RedirectToAction("Details", new { id = viewModel.UserID });
+            }
+
+            return View("Index");
+        }
+
+        public ActionResult RemoveRoleFromUser(string id)
+        {
+            var userManager = new UserManager<Users>(new UserStore<Users>(db));
+
+            List<string> rnames = new List<string>();
+            List<IdentityRole> roles = db.Roles.ToList();
+
+            for (int i = 0; i < roles.Count(); i++)
+            {
+                if(userManager.IsInRole(id, roles[i].Name))
+                {
+                    rnames.Add(roles[i].Name);
+                }
+            }
+
+            ViewBag.roles = rnames;
+
+            AddRoleToUser viewModel = new AddRoleToUser()
+            {
+                UserID = id,
+                RoleName = null
+            };
+            return View(viewModel);
+        }
+
+        // POST: Roles/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RemoveRoleFromUser([Bind(Include = "UserId, RoleName")] AddRoleToUser viewModel)
+        {
+            var uId = viewModel.UserID;
+            var rName = viewModel.RoleName;
+            if (ModelState.IsValid)
+            {
+                var userManager = new UserManager<Users>(new UserStore<Users>(db));
+
+                userManager.RemoveFromRole(uId, rName);
+                db.SaveChanges();
+                return RedirectToAction("Details", new { id = viewModel.UserID });
+            }
+
+            return View("Index");
+        }
+
         // POST: Users/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.

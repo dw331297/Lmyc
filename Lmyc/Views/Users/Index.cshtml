@@ -95,10 +95,12 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
             @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Add Roles", "AddRoleToUser", new { id = item.Id }) |
+            @Html.ActionLink("Remove Roles", "RemoveRoleFromUser", new { id = item.Id }) |
             @if (!item.UserName.Equals("a"))
-        {
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-    }
+    {
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+}
         </td>
     </tr>
 }

@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddRoleToUserController.cs" />
     <Compile Include="Controllers\BoatsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -215,6 +216,14 @@
     <Compile Include="Migrations\BoatMigrations\201802181804208_seventh.cs" />
     <Compile Include="Migrations\BoatMigrations\201802181804208_seventh.Designer.cs">
       <DependentUpon>201802181804208_seventh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\BoatMigrations\201802182056350_external.cs" />
+    <Compile Include="Migrations\BoatMigrations\201802182056350_external.Designer.cs">
+      <DependentUpon>201802182056350_external.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\BoatMigrations\201802182106016_eigth.cs" />
+    <Compile Include="Migrations\BoatMigrations\201802182106016_eigth.Designer.cs">
+      <DependentUpon>201802182106016_eigth.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\BoatMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
@@ -301,9 +310,13 @@
     <Content Include="Views\Roles\Details.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\AddRoleToUser\Index.cshtml" />
+    <Content Include="Views\Users\AddRoleToUser.cshtml" />
+    <Content Include="Views\Users\RemoveRoleFromUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\RoleManage\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -339,6 +352,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\BoatMigrations\201802181804208_seventh.resx">
       <DependentUpon>201802181804208_seventh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\BoatMigrations\201802182056350_external.resx">
+      <DependentUpon>201802182056350_external.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\BoatMigrations\201802182106016_eigth.resx">
+      <DependentUpon>201802182106016_eigth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
