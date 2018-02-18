@@ -3,7 +3,7 @@ namespace Lmyc.Migrations.BoatMigrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Update : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {

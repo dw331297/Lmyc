@@ -28,6 +28,10 @@
                     {
                         <li>@Html.ActionLink("Boats", "Index", "Boats")</li>
                     }
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Users and Roles", "MainPage", "Users")</li>
+                    }
                 @*@if (User.IsInRole("Admin"))
     {
         <li>@Html.ActionLink("Users", "Index", "ApplicationUsers")</li>
@@ -42,7 +46,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Lower Mainland Yacht Co-Op</p>
         </footer>
     </div>
 
