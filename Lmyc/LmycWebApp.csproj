@@ -212,6 +212,10 @@
     <Compile Include="Migrations\BoatMigrations\201802180004358_Upgrade.Designer.cs">
       <DependentUpon>201802180004358_Upgrade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\BoatMigrations\201802181804208_seventh.cs" />
+    <Compile Include="Migrations\BoatMigrations\201802181804208_seventh.Designer.cs">
+      <DependentUpon>201802181804208_seventh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\BoatMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -332,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\BoatMigrations\201802180004358_Upgrade.resx">
       <DependentUpon>201802180004358_Upgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\BoatMigrations\201802181804208_seventh.resx">
+      <DependentUpon>201802181804208_seventh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
